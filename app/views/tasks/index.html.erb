@@ -2,7 +2,11 @@
 <form>
   <% @tasks.each do |task|%>
     <input type="checkbox" name="<%=task.id%>" <%= "checked" if task.completed == true%>>
-    <label for="<%=task.id%>"><%= link_to task.title, task_path(task.id) %></label><br>
+    <label for="<%=task.id%>"><%= link_to task.title, task_path(task.id) %></label>
+    <%= link_to destroy_path(task), method: :delete, data: { confirm: "Are you sure?" } do  %>
+    <i class="far fa-trash-alt"></i>
+    <% end %>
+    <br>
   <%end%>
 </form>
 
