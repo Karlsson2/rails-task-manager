@@ -5,3 +5,6 @@
     <label for="<%=task.id%>"><%= link_to task.title, task_path(task.id) %></label><br>
   <%end%>
 </form>
+
+<%=link_to "Create new task", new_path()%>
+
