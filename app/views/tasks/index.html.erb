@@ -1,3 +1,4 @@
+<div class="container">
 <h1>My Tasks</h1>
 <form>
   <% @tasks.each do |task|%>
@@ -10,5 +11,6 @@
   <%end%>
 </form>
 
-<%=link_to "Create new task", new_path()%>
+<%=link_to '<i class="far fa-plus-square"></i> Create new task'.html_safe, new_path()%>
 
+</div>

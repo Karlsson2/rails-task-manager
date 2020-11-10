@@ -1,6 +1,8 @@
+<div class="container">
+<div class ="c-h">
 <h1><%=@task.title%></h1>
-<%=link_to "Edit task", edit_path()%>
-
+<%=link_to '<i class="fas fa-pen"></i> Edit task'.html_safe, edit_path(), class: "edit-btn"%>
+</div>
 <p><%=@task.details%></p>
 
   <input type="checkbox" name="<%=@task.id%>" <%= "checked" if @task.completed == true%>>
@@ -8,6 +10,6 @@
   <br>
 
 
-<%=link_to "Back to tasks", tasks_path()%>
+<%=link_to '<i class="fas fa-history"></i> Back to tasks'.html_safe, tasks_path()%>
 
-
+</div>
