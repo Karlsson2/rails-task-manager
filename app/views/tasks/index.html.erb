@@ -3,14 +3,16 @@
 <form>
   <% @tasks.each do |task|%>
     <input type="checkbox" name="<%=task.id%>" <%= "checked" if task.completed == true%>>
-    <label for="<%=task.id%>"><%= link_to task.title, task_path(task.id) %></label>
-    <%= link_to destroy_path(task), method: :delete, data: { confirm: "Are you sure?" } do  %>
+    <label for="<%=task.id%>" class="task-text"><%= link_to task.title, task_path(task.id) %></label>
+    <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure?" } do  %>
     <i class="far fa-trash-alt"></i>
     <% end %>
     <br>
   <%end%>
 </form>
 
-<%=link_to '<i class="far fa-plus-square"></i> Create new task'.html_safe, new_path()%>
+<%=link_to new_task_path() do %>
+<i class="far fa-plus-square"></i> Create new task
+<% end %>
 
 </div>

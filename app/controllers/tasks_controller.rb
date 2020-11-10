@@ -16,7 +16,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.save
 
-    redirect_to tasks_path(@task)
+    redirect_to task_path(@task)
   end
 
   def edit
@@ -27,7 +27,7 @@ class TasksController < ApplicationController
     @task = set_task_by_id
     @task.update(task_params)
 
-    redirect_to tasks_path(@task)
+    redirect_to task_path(@task)
   end
 
   def destroy
